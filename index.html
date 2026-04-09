@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Monitor</title>
+  <style>
+    :root {
+      --bg: #081120;
+      --panel: rgba(16, 24, 40, 0.78);
+      --line: rgba(255,255,255,0.12);
+      --text: #e6eef8;
+      --muted: #9fb0c6;
+      --blue: #63a4ff;
+      --cyan: #62f3ff;
+      --green: #36d399;
+      --yellow: #ffd166;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #132238 0%, #081120 45%, #050a12 100%);
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px 80px; }
+    .hero, .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.28);
+    }
+    .hero { padding: 42px; }
+    h1 { font-size: 44px; margin: 0 0 12px; }
+    h2 { font-size: 24px; margin: 0 0 16px; }
+    p { line-height: 1.6; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(99,164,255,.35);
+      border-radius: 999px;
+      color: var(--cyan);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--line);
+    }
+    .btn.primary { background: linear-gradient(90deg, var(--blue), #7d7cff); color: white; }
+    .btn.secondary { background: rgba(255,255,255,.04); color: var(--text); }
+    .grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card { padding: 20px; }
+    .kpi { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .section { margin-top: 24px; padding: 28px; }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.8; }
+    .footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
+    .ok { color: var(--green); }
+    .warn { color: var(--yellow); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Public Preview • Agent Fleet Observability</div>
+      <h1>Agent Monitor</h1>
+      <p>Hermes 헤리, 데브, 치프(OpenClaw), Claude 계열 에이전트의 실행 상태를 한 화면에서 추적하는 모니터링 프로젝트입니다. 프로세스, 게이트웨이, 세션, 디스크, 메모리, 컨텍스트 압축, 서브에이전트 흔적까지 통합 관측하는 것이 목표입니다.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/izhaha0226/agent-monitor">GitHub Repository</a>
+        <a class="btn secondary" href="https://github.com/izhaha0226/agent-monitor/releases">Releases</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="panel card"><div class="kpi">4</div><div>Target Agents</div><p>heri / dev / chief / claude</p></div>
+      <div class="panel card"><div class="kpi">5</div><div>Primary Views</div><p>overview / resources / context / delegation / gateway</p></div>
+      <div class="panel card"><div class="kpi">SQLite</div><div>Snapshot Store</div><p>Periodic local metrics persistence</p></div>
+      <div class="panel card"><div class="kpi">FastAPI + Next.js</div><div>Planned Stack</div><p>Backend API + dashboard frontend</p></div>
+    </div>
+
+    <section class="panel section">
+      <h2>Initial Scope</h2>
+      <ul>
+        <li>프로세스 상태: pid, cpu, rss, uptime, command</li>
+        <li>게이트웨이 상태: 연결 플랫폼, 최근 오류, 중복 기동 탐지</li>
+        <li>세션/로그/DB 용량 집계</li>
+        <li>메모리 설정과 컨텍스트 압축 설정 파싱</li>
+        <li>delegate_task / cron / background process 흔적 수집</li>
+      </ul>
+    </section>
+
+    <section class="panel section">
+      <h2>Status</h2>
+      <ul>
+        <li><span class="ok">완료</span> GitHub repo 공개 생성</li>
+        <li><span class="ok">완료</span> 프로젝트 기본 구조 및 설계 문서 부트스트랩</li>
+        <li><span class="ok">완료</span> 외부 공개용 GitHub Pages 사이트 배포</li>
+        <li><span class="warn">진행 예정</span> collectors 1차 구현</li>
+        <li><span class="warn">진행 예정</span> FastAPI API + 대시보드 UI</li>
+      </ul>
+    </section>
+
+    <div class="footer">Built for representative-level fleet visibility. Honest metrics first, fake green status never.</div>
+  </div>
+</body>
+</html>

@@ -2,6 +2,9 @@
 
 Unified monitoring dashboard for Hermes / Dev / Chief / Claude agents.
 
+Public site: https://izhaha0226.github.io/agent-monitor/
+GitHub repo: https://github.com/izhaha0226/agent-monitor
+
 ## Goal
 - 한눈에 에이전트 상태 확인
 - 게이트웨이/프로세스/메모리/세션/컨텍스트 압축/서브에이전트 사용량 추적
