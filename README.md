@@ -28,6 +28,7 @@ GitHub repo: https://github.com/izhaha0226/agent-monitor
 ## Project Layout
 - `app/backend` — API
 - `app/frontend` — dashboard UI
+- `public` — external static landing / GitHub Pages artifact
 - `collectors` — local collectors
 - `storage` — SQLite schema and snapshots
 - `scripts` — bootstrap / run helpers
